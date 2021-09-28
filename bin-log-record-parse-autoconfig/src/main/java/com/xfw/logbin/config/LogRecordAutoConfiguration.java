@@ -89,5 +89,10 @@ public class LogRecordAutoConfiguration {
         public TypeConverter varcharTypeConverter() {
             return new VarcharTypeConverter();
         }
+
+        @Bean
+        public TypeConverter intTypeConverter() {
+            return new IntTypeConverter();
+        }
     }
 }

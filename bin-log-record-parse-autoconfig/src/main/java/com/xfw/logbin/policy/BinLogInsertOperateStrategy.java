@@ -5,6 +5,7 @@ import com.xfw.logbin.converter.TypeConverter;
 import com.xfw.logbin.entity.BinRecordDetails;
 import com.xfw.logbin.enums.BinLogOperateTypeEnum;
 import com.xfw.logbin.process.LogRecordContext;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 import java.util.Map;
@@ -35,6 +36,10 @@ public class BinLogInsertOperateStrategy implements BinLogOperateStrategy {
                 key = converter2LowCamelIfNecessary(key);
 
                 String value = entry.getValue();
+                if (StringUtils.isBlank(value)) {
+                    continue;
+                }
+
                 Object realValue = typeConverter.converter(value);
                 if (Objects.nonNull(realValue)) {
                     record.put(key, realValue);

@@ -19,6 +19,7 @@ META-INF/spring-configuration-metadata.json
 com/xfw/logbin/config/LogRecordProperties.class
 com/xfw/logbin/policy/BinLogUpdateOperateStrategy.class
 com/xfw/logbin/policy/BinLogInsertOperateStrategy.class
+com/xfw/logbin/converter/IntTypeConverter.class
 com/xfw/logbin/process/DefaultCanalStyleLogBinParser$1.class
 com/xfw/logbin/converter/DateTimeTypeConverter.class
 com/xfw/logbin/converter/Bigint2LongConverter.class
