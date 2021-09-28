@@ -8,7 +8,7 @@ import org.apache.commons.lang3.StringUtils;
  * @author yb.Sun
  * @date 2021/09/27 17:02
  **/
-public class Bigint2LongConverter implements TypeConverter {
+public class BigintTypeConverter implements TypeConverter {
 
     @Override
     public Long converter(String src) {

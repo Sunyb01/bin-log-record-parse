@@ -60,7 +60,7 @@ public class LogRecordAutoConfiguration {
 
         @Bean
         public TypeConverter bigint2LongConverter() {
-            return new Bigint2LongConverter();
+            return new BigintTypeConverter();
         }
 
         @Bean
