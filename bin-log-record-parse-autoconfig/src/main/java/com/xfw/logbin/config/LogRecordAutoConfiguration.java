@@ -26,7 +26,6 @@ public class LogRecordAutoConfiguration {
     }
 
     @Bean
-    @Order(-1)
     @ConditionalOnMissingBean(value = LogOperateStrategyManager.class)
     public LogOperateStrategyManager logOperateManager() {
         return new LogOperateStrategyManager();
