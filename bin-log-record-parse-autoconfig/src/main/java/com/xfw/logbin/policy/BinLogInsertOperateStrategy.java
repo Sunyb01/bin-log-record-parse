@@ -27,12 +27,7 @@ public class BinLogInsertOperateStrategy implements BinLogOperateStrategy {
         List<BinRecordDetails<String, Object>> result = Lists.newArrayListWithCapacity(data.size());
 
         for (Map<String, String> item : data) {
-            BinRecordDetails<String, Object> record = BinRecordDetails.<String, Object>builder()
-                    .typeEnum(BinLogOperateTypeEnum.valueOf(context.getActionType()))
-                    .databaseName(context.getDatabaseName())
-                    .tableName(context.getTableName())
-                    .pk(context.getPks())
-                    .build();
+            BinRecordDetails<String, Object> record = buildRecordByContext(context);
             // 1. 解析参数
             for (Map.Entry<String, String> entry : item.entrySet()){
                 String key = entry.getKey();

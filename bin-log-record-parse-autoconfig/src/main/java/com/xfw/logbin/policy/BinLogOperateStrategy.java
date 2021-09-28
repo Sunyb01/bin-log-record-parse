@@ -86,4 +86,20 @@ public interface BinLogOperateStrategy {
             throw new IllegalArgumentException("Invalid param is null or empty!");
         }
     }
+
+    /**
+     * 根据上下文构建初始记录
+     * @author yb.sun
+     * @date 2021/09/28 15:32
+     * @param context 上下文
+     * @return com.xfw.logbin.entity.BinRecordDetails<java.lang.String, java.lang.Object> 记录
+     */
+    default BinRecordDetails<String, Object> buildRecordByContext(LogRecordContext context) {
+        return BinRecordDetails.<String, Object>builder()
+                .databaseName(context.getDatabaseName())
+                .operateType(context.getActionType())
+                .tableName(context.getTableName())
+                .pk(context.getPks())
+                .build();
+    }
 }

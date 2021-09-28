@@ -18,5 +18,5 @@ public enum BinLogOperateTypeEnum {
     /**
      *  删除-行级别
      */
-    DELETE;
+    DELETE
 }

@@ -5,8 +5,6 @@ import com.xfw.logbin.enums.BinLogOperateTypeEnum;
 import com.xfw.logbin.process.LogRecordContext;
 import com.xfw.logbin.converter.TypeConverter;
 import com.xfw.logbin.entity.BinRecordDetails;
-import org.apache.commons.collections4.CollectionUtils;
-import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 import java.util.Map;
@@ -31,12 +29,7 @@ public class BinLogDeleteOperateStrategy implements BinLogOperateStrategy {
         List<BinRecordDetails<String, Object>> result = Lists.newArrayListWithCapacity(data.size());
 
         for (Map<String, String> item : data) {
-            BinRecordDetails<String, Object> record = BinRecordDetails.<String, Object>builder()
-                    .typeEnum(BinLogOperateTypeEnum.valueOf(context.getActionType()))
-                    .databaseName(context.getDatabaseName())
-                    .tableName(context.getTableName())
-                    .pk(pks)
-                    .build();
+            BinRecordDetails<String, Object> record = buildRecordByContext(context);
 
             pks.forEach(pkName -> populateField(typeConverterMap, item, record, pkName));
 

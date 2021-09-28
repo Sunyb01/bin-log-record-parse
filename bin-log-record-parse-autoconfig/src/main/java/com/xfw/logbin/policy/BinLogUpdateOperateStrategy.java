@@ -30,12 +30,7 @@ public class BinLogUpdateOperateStrategy implements BinLogOperateStrategy {
         List<Map<String, Object>> olds = context.getOlds();
 
         for (Map<String, String> item : data) {
-            BinRecordDetails<String, Object> record = BinRecordDetails.<String, Object>builder()
-                    .typeEnum(BinLogOperateTypeEnum.valueOf(context.getActionType()))
-                    .databaseName(context.getDatabaseName())
-                    .tableName(context.getTableName())
-                    .pk(pks)
-                    .build();
+            BinRecordDetails<String, Object> record = buildRecordByContext(context);
             // 1. 遍历更新字段
             for (Map<String, Object> updateField : olds) {
                 for (Map.Entry<String, Object> entry : updateField.entrySet()){

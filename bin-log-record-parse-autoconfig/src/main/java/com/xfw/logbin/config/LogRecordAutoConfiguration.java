@@ -1,11 +1,9 @@
 package com.xfw.logbin.config;
 
-import com.xfw.logbin.process.BaseLogBinParser;
-import com.xfw.logbin.process.DefaultCanalStyleLogBinParser;
 import com.xfw.logbin.converter.*;
 import com.xfw.logbin.policy.*;
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import com.xfw.logbin.process.BaseLogBinParser;
+import com.xfw.logbin.process.DefaultCanalStyleLogBinParser;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;

@@ -34,7 +34,7 @@ public interface BinLogRecord {
      * @date 2021/09/27 15:55
      * @return com.sunyb.dataxdemo.common.BinLogOperateTypeEnum 操作类型
      */
-    BinLogOperateTypeEnum geOperateType();
+    String geOperateType();
 
     /**
      * 获取主键

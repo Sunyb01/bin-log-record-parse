@@ -12,7 +12,6 @@ import java.util.Date;
  *
  * @author yb.sun
  * @date 2021/09/27 18:02
- * @return
  */
 public class DateTimeTypeConverter  implements TypeConverter {
     static DateTimeFormatter df = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");

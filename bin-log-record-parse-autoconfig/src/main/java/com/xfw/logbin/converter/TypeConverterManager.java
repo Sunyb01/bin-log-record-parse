@@ -21,7 +21,7 @@ public class TypeConverterManager implements ApplicationContextAware, Initializi
     private ApplicationContext applicationContext;
 
     @Override
-    public void afterPropertiesSet() throws Exception {
+    public void afterPropertiesSet() {
         applicationContext.getBeansOfType(TypeConverter.class).values().forEach(item -> TYPE_CONVERTER_MAP.put(item.getTypeName(), item));
     }
 

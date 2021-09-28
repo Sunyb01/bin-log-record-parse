@@ -1,6 +1,5 @@
 package com.xfw.logbin.entity;
 
-import com.xfw.logbin.enums.BinLogOperateTypeEnum;
 import lombok.*;
 
 import java.util.HashMap;
@@ -33,7 +32,7 @@ public class BinRecordDetails<K, V> extends HashMap<K, V> implements BinLogRecor
     /**
      *  操作类型
      */
-    private BinLogOperateTypeEnum typeEnum;
+    private String operateType;
 
     /**
      *  主键列表
@@ -51,8 +50,8 @@ public class BinRecordDetails<K, V> extends HashMap<K, V> implements BinLogRecor
     }
 
     @Override
-    public BinLogOperateTypeEnum geOperateType() {
-        return this.typeEnum;
+    public String geOperateType() {
+        return this.operateType;
     }
 
     @Override
@@ -65,7 +64,7 @@ public class BinRecordDetails<K, V> extends HashMap<K, V> implements BinLogRecor
         StringBuilder sb = new StringBuilder();
         sb.append("BinRecordDetails(tableName=").append(this.getTableName());
         sb.append(", databaseName=").append(this.getDataBaseName());
-        sb.append(", typeEnum=").append(this.getTypeEnum());
+        sb.append(", operateType=").append(this.getOperateType());
         sb.append(", pk=").append(this.getPk());
         Iterator<Entry<K,V>> i = entrySet().iterator();
         if (! i.hasNext()) {
