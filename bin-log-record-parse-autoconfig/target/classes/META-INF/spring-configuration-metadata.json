@@ -2,8 +2,8 @@
   "groups": [
     {
       "name": "log-record",
-      "type": "com.xfw.common.config.LogRecordProperties",
-      "sourceType": "com.xfw.common.config.LogRecordProperties"
+      "type": "com.xfw.logbin.config.LogRecordProperties",
+      "sourceType": "com.xfw.logbin.config.LogRecordProperties"
     }
   ],
   "properties": [
@@ -11,7 +11,7 @@
       "name": "log-record.record-type",
       "type": "java.lang.String",
       "description": "注册类型",
-      "sourceType": "com.xfw.common.config.LogRecordProperties"
+      "sourceType": "com.xfw.logbin.config.LogRecordProperties"
     }
   ],
   "hints": []

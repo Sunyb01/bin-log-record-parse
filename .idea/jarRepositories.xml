@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="gwt-maven" />
+      <option name="name" value="gwt-maven" />
+      <option name="url" value="http://47.99.39.180:8781/repository/maven-public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="gilead-maven-repo" />
+      <option name="name" value="gilead-maven-repo" />
+      <option name="url" value="http://47.99.39.180:8781/repository/maven-public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss" />
+      <option name="name" value="jboss" />
+      <option name="url" value="http://47.99.39.180:8781/repository/maven-public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://maven.aliyun.com/repository/public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="hibernat4gwt-repo" />
+      <option name="name" value="hibernat4gwt-repo" />
+      <option name="url" value="http://47.99.39.180:8781/repository/maven-public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="datanucleus" />
+      <option name="name" value="datanucleus" />
+      <option name="url" value="http://47.99.39.180:8781/repository/maven-public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="alimaven" />
+      <option name="name" value="aliyun maven" />
+      <option name="url" value="http://47.99.39.180:8781/repository/maven-public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="nexus" />
+      <option name="name" value="nexus" />
+      <option name="url" value="http://47.99.39.180:8781/repository/maven-public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="gilead-repo" />
+      <option name="name" value="Gilead Maven Repository" />
+      <option name="url" value="http://47.99.39.180:8781/repository/maven-public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven2-repository.dev.java.net" />
+      <option name="name" value="Java.net Repository for Maven" />
+      <option name="url" value="http://47.99.39.180:8781/repository/maven-public" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="ibiblio" />
+      <option name="name" value="ibiblio" />
+      <option name="url" value="http://47.99.39.180:8781/repository/maven-public" />
+    </remote-repository>
+  </component>
+</project>
