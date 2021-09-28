@@ -4,11 +4,13 @@ import com.xfw.logbin.process.BaseLogBinParser;
 import com.xfw.logbin.process.DefaultCanalStyleLogBinParser;
 import com.xfw.logbin.converter.*;
 import com.xfw.logbin.policy.*;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 
 /**
  *
@@ -26,13 +28,13 @@ public class LogRecordAutoConfiguration {
     }
 
     @Bean
+    @Order(-1)
     @ConditionalOnMissingBean(value = LogOperateStrategyManager.class)
     public LogOperateStrategyManager logOperateManager() {
         return new LogOperateStrategyManager();
     }
 
     @Configuration
-    @ConditionalOnBean(value = LogOperateStrategyManager.class)
     static class LogOperateAutoConfiguration {
 
         @Bean
@@ -58,7 +60,6 @@ public class LogRecordAutoConfiguration {
     }
 
     @Configuration
-    @ConditionalOnBean(value = TypeConverterManager.class)
     static class TypeConverterAutoConfiguration {
 
         @Bean
