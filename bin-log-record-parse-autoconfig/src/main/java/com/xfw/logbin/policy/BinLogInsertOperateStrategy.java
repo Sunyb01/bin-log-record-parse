@@ -1,19 +1,17 @@
 package com.xfw.logbin.policy;
 
-import com.google.common.base.CaseFormat;
 import com.google.common.collect.Lists;
-import com.xfw.logbin.constants.CanalBinLogRecordKeyConstants;
-import com.xfw.logbin.enums.BinLogOperateTypeEnum;
-import com.xfw.logbin.process.LogRecordContext;
 import com.xfw.logbin.converter.TypeConverter;
 import com.xfw.logbin.entity.BinRecordDetails;
+import com.xfw.logbin.enums.BinLogOperateTypeEnum;
+import com.xfw.logbin.process.LogRecordContext;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 /**
- *
+ * insert 操作
  * @author yb.Sun
  * @date 2021/09/27 18:34
  **/
@@ -39,10 +37,7 @@ public class BinLogInsertOperateStrategy implements BinLogOperateStrategy {
             for (Map.Entry<String, String> entry : item.entrySet()){
                 String key = entry.getKey();
                 TypeConverter typeConverter = typeConverterMap.get(key);
-
-                if (key.contains(CanalBinLogRecordKeyConstants.CONVERTER_2_LOWER_CAMEL_TOKEN)) {
-                    key = CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, key);
-                }
+                key = converter2LowCamelIfNecessary(key);
 
                 String value = entry.getValue();
                 Object realValue = typeConverter.converter(value);
