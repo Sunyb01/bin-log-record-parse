@@ -18,5 +18,17 @@ public enum BinLogOperateTypeEnum {
     /**
      *  删除-行级别
      */
-    DELETE
+    DELETE,
+    /**
+     *  新建-库级别
+     */
+    CREATE,
+    /**
+     *  删除-库级别
+     */
+    DROP,
+    /**
+     *  修改-库级别
+     */
+    ALTER
 }

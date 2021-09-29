@@ -23,7 +23,7 @@ public interface BinLogOperateStrategy {
      * 获取支持的操作类型 INSERT/UPDATE/DELETE
      * @author yb.sun
      * @date 2021/09/27 20:32
-     * @return com.sunyb.dataxdemo.common.enums.BinLogOperateTypeEnum 操作类型枚举
+     * @return com.xfw.logbin.enums.BinLogOperateTypeEnum 操作类型枚举
      */
     BinLogOperateTypeEnum getSupportName();
 

@@ -3,18 +3,22 @@ package com.xfw.logbin.process;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
+import com.github.benmanes.caffeine.cache.Cache;
+import com.github.benmanes.caffeine.cache.Caffeine;
 import com.google.common.collect.Maps;
-
 import com.xfw.logbin.converter.TypeConverter;
 import com.xfw.logbin.converter.TypeConverterManager;
 import com.xfw.logbin.entity.BinRecordDetails;
 import com.xfw.logbin.policy.LogOperateStrategyManager;
+import org.apache.commons.collections4.MapUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 import static com.xfw.logbin.constants.CanalBinLogRecordKeyConstants.*;
 
@@ -26,6 +30,12 @@ import static com.xfw.logbin.constants.CanalBinLogRecordKeyConstants.*;
 @Component
 public class DefaultCanalStyleLogBinParser extends BaseLogBinParser<String>{
 
+    final Cache<String, Map<String, TypeConverter>> TABLE_TYPE_CONVERTER_CACHE = Caffeine.newBuilder()
+            .expireAfterWrite(30 * 24 * 60 * 60L, TimeUnit.SECONDS)
+            .initialCapacity(100)
+            .maximumSize(2000)
+            .build();
+
     @Autowired
     public DefaultCanalStyleLogBinParser(LogOperateStrategyManager logOperateStrategyManager) {
         super(logOperateStrategyManager);
@@ -35,23 +45,39 @@ public class DefaultCanalStyleLogBinParser extends BaseLogBinParser<String>{
     protected List<BinRecordDetails<String, Object>> doParseSource(String source) {
         JSONObject jsonSrc = JSON.parseObject(source);
         Boolean isDdl = (Boolean) jsonSrc.get(IS_DDL_KEY);
+        String tableName = (String) jsonSrc.get(TABLE_KEY);
+        String databaseName = (String) jsonSrc.get(DATABASE_KEY);
+        String completeCacheKey = String.format("%s.%s", databaseName, tableName);
         // ddl的sql不做处理
         if (isDdl) {
+            // 说明表格式有改动,清除缓存
+            removeTypeConverterCacheIfNecessary(completeCacheKey);
             return null;
         }
 
-        JSONObject mysqlType = (JSONObject) jsonSrc.get(MYSQL_TYPE_KEY);
+        LogRecordContext context = populateContext(jsonSrc);
+
+        Map<String, TypeConverter> stringTypeConverterMap = getTypeConverter(jsonSrc, completeCacheKey);
+
         List<Map<String, String>> data = JSON.parseObject(JSON.toJSONString(jsonSrc.get(DATA_KEY)),
                 new TypeReference<List<Map<String, String>>>() {});
-        Map<String, TypeConverter> stringTypeConverterMap = extractColumnAndTypeConverter(mysqlType);
 
-        LogRecordContext context = populateContext(jsonSrc);
         return logOperateStrategyManager.process(data, context, stringTypeConverterMap);
     }
 
     @Override
     public String getParseName() {
         return "CANAL";
+    }
+
+    private Map<String, TypeConverter> getTypeConverter(JSONObject jsonSrc, String completeCacheKey) {
+        JSONObject mysqlType = (JSONObject) jsonSrc.get(MYSQL_TYPE_KEY);
+        Map<String, TypeConverter> cache = getTypeConverterByCache(completeCacheKey);
+        if (MapUtils.isNotEmpty(cache)) {
+            return cache;
+        }
+
+        return extractColumnAndTypeConverter(mysqlType, completeCacheKey);
     }
 
     /**
@@ -79,9 +105,14 @@ public class DefaultCanalStyleLogBinParser extends BaseLogBinParser<String>{
     /**
      *  解析数据列类型
      * @param mysqlType 数据列类型列表
+     * @param completeCacheKey 缓存键
      * @return 返回一个列名为键，类型转换器为值得集合
      */
-    private Map<String, TypeConverter> extractColumnAndTypeConverter(JSONObject mysqlType) {
+    private Map<String, TypeConverter> extractColumnAndTypeConverter(JSONObject mysqlType, String completeCacheKey) {
+        if (MapUtils.isNotEmpty(TABLE_TYPE_CONVERTER_CACHE.getIfPresent(completeCacheKey))) {
+            return TABLE_TYPE_CONVERTER_CACHE.getIfPresent(completeCacheKey);
+        }
+
         Map<String, TypeConverter> converterMap = TypeConverterManager.getTypeConverterMap();
         Map<String, TypeConverter> result = Maps.newHashMap();
 
@@ -103,6 +134,41 @@ public class DefaultCanalStyleLogBinParser extends BaseLogBinParser<String>{
             }
         }
 
+        if (MapUtils.isNotEmpty(TABLE_TYPE_CONVERTER_CACHE.getIfPresent(completeCacheKey))) {
+            TABLE_TYPE_CONVERTER_CACHE.put(completeCacheKey, result);
+        }
+
         return result;
     }
+
+    /**
+     * 根据库名称与表名称，清除类型转换器缓存
+     * @author yb.sun
+     * @date 2021/09/29 14:01
+     * @param completeCacheKey 缓存键
+     */
+    private void removeTypeConverterCacheIfNecessary(String completeCacheKey) {
+        if (StringUtils.isBlank(completeCacheKey)) {
+            return;
+        }
+
+        Map<String, TypeConverter> typeConverterMap = TABLE_TYPE_CONVERTER_CACHE.getIfPresent(completeCacheKey);
+        if (MapUtils.isEmpty(typeConverterMap)) {
+            return;
+        }
+
+        TABLE_TYPE_CONVERTER_CACHE.invalidate(completeCacheKey);
+    }
+
+    /**
+     * 获取缓存
+     * @author yb.sun
+     * @date 2021/09/29 14:17
+     * @param completeCacheKey 键
+     * @return java.util.Map<java.lang.String, com.xfw.logbin.converter.TypeConverter>
+     */
+    private Map<String, TypeConverter> getTypeConverterByCache(String completeCacheKey) {
+        return TABLE_TYPE_CONVERTER_CACHE.getIfPresent(completeCacheKey);
+    }
+
 }
