@@ -67,9 +67,17 @@ public class DefaultCanalStyleLogBinParser extends BaseLogBinParser<String>{
 
     @Override
     public String getParseName() {
-        return "CANAL";
+        return PARSE_TYPE_CANAL;
     }
 
+    /**
+     * 获取转换器集合
+     * @author yb.sun
+     * @date 2021/09/30 9:40
+     * @param jsonSrc 数据源json格式字符串
+     * @param completeCacheKey 缓存键(databaseName + tableName)
+     * @return java.util.Map<java.lang.String, com.xfw.logbin.converter.TypeConverter> 转换器列表
+     */
     private Map<String, TypeConverter> getTypeConverter(JSONObject jsonSrc, String completeCacheKey) {
         JSONObject mysqlType = (JSONObject) jsonSrc.get(MYSQL_TYPE_KEY);
         Map<String, TypeConverter> cache = getTypeConverterByCache(completeCacheKey);
@@ -105,7 +113,7 @@ public class DefaultCanalStyleLogBinParser extends BaseLogBinParser<String>{
     /**
      *  解析数据列类型
      * @param mysqlType 数据列类型列表
-     * @param completeCacheKey 缓存键
+     * @param completeCacheKey 缓存键(databaseName + tableName)
      * @return 返回一个列名为键，类型转换器为值得集合
      */
     private Map<String, TypeConverter> extractColumnAndTypeConverter(JSONObject mysqlType, String completeCacheKey) {
@@ -145,7 +153,7 @@ public class DefaultCanalStyleLogBinParser extends BaseLogBinParser<String>{
      * 根据库名称与表名称，清除类型转换器缓存
      * @author yb.sun
      * @date 2021/09/29 14:01
-     * @param completeCacheKey 缓存键
+     * @param completeCacheKey 缓存键(databaseName + tableName)
      */
     private void removeTypeConverterCacheIfNecessary(String completeCacheKey) {
         if (StringUtils.isBlank(completeCacheKey)) {
@@ -164,7 +172,7 @@ public class DefaultCanalStyleLogBinParser extends BaseLogBinParser<String>{
      * 获取缓存
      * @author yb.sun
      * @date 2021/09/29 14:17
-     * @param completeCacheKey 键
+     * @param completeCacheKey 缓存键(databaseName + tableName)
      * @return java.util.Map<java.lang.String, com.xfw.logbin.converter.TypeConverter>
      */
     private Map<String, TypeConverter> getTypeConverterByCache(String completeCacheKey) {

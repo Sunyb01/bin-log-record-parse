@@ -8,6 +8,11 @@ package com.xfw.logbin.constants;
 public class CanalBinLogRecordKeyConstants {
     private CanalBinLogRecordKeyConstants() { }
 
+    /**
+     *  canal 类型解析器
+     */
+    public static final String PARSE_TYPE_CANAL = "CANAL";
+
     // ######################################################## logRecord字段名称 ########################################################
 
     /**
@@ -96,7 +101,7 @@ public class CanalBinLogRecordKeyConstants {
     public static final String DEFAULT_CANAL_MYSQL_TYPE_SUB_TOKEN = "(";
 
     /**
-     *  canal字段mysqlType中值截取标识
+     *  canal字段mysqlType中驼峰转换标识
      */
     public static final String CONVERTER_2_LOWER_CAMEL_TOKEN = "_";
 
