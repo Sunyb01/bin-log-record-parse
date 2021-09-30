@@ -31,9 +31,11 @@ import static com.xfw.logbin.constants.CanalBinLogRecordKeyConstants.*;
 public class DefaultCanalStyleLogBinParser extends BaseLogBinParser<String>{
 
     final Cache<String, Map<String, TypeConverter>> TABLE_TYPE_CONVERTER_CACHE = Caffeine.newBuilder()
-            .expireAfterWrite(30 * 24 * 60 * 60L, TimeUnit.SECONDS)
+            .expireAfterWrite(24 * 60 * 60L, TimeUnit.SECONDS)
             .initialCapacity(100)
             .maximumSize(2000)
+            .weakValues()
+            .weakKeys()
             .build();
 
     @Autowired
@@ -89,9 +91,11 @@ public class DefaultCanalStyleLogBinParser extends BaseLogBinParser<String>{
     }
 
     /**
-     *  填充上下文
+     * 填充上下文
+     * @author yb.sun
+     * @date 2021/09/30 16:38
      * @param jsonSrc 数据源
-     * @return 上下文
+     * @return com.xfw.logbin.process.LogRecordContext 上下文
      */
     private LogRecordContext populateContext(JSONObject jsonSrc) {
         String tableName = (String) jsonSrc.get(TABLE_KEY);
