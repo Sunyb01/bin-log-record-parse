@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- *
+ *  自动配置类
  * @author yb.Sun
  * @date 2021/09/28 9:39
  **/
@@ -19,15 +19,15 @@ import org.springframework.context.annotation.Configuration;
 public class LogRecordAutoConfiguration {
 
     @Bean
-    @ConditionalOnMissingBean(BaseLogBinParser.class)
-    public BaseLogBinParser<String> defaultCanalStyleLogBinParser() {
-        return new DefaultCanalStyleLogBinParser(logOperateManager());
-    }
-
-    @Bean
     @ConditionalOnMissingBean(value = LogOperateStrategyManager.class)
     public LogOperateStrategyManager logOperateManager() {
         return new LogOperateStrategyManager();
+    }
+
+    @Bean
+    @ConditionalOnMissingBean(BaseLogBinParser.class)
+    public BaseLogBinParser<String> defaultCanalStyleLogBinParser() {
+        return new DefaultCanalStyleLogBinParser(logOperateManager());
     }
 
     @Configuration

@@ -22,7 +22,6 @@ com/xfw/logbin/policy/BinLogInsertOperateStrategy.class
 com/xfw/logbin/converter/IntTypeConverter.class
 com/xfw/logbin/process/DefaultCanalStyleLogBinParser$1.class
 com/xfw/logbin/converter/DateTimeTypeConverter.class
-com/xfw/logbin/converter/Bigint2LongConverter.class
 com/xfw/logbin/converter/CharTypeConverter.class
 com/xfw/logbin/process/LogRecordContext.class
 com/xfw/logbin/enums/BinLogOperateTypeEnum.class

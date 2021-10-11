@@ -12,8 +12,6 @@ import com.xfw.logbin.entity.BinRecordDetails;
 import com.xfw.logbin.policy.LogOperateStrategyManager;
 import org.apache.commons.collections4.MapUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
@@ -27,10 +25,9 @@ import static com.xfw.logbin.constants.CanalBinLogRecordKeyConstants.*;
  * @author yb.Sun
  * @date 2021/09/27 16:49
  **/
-@Component
 public class DefaultCanalStyleLogBinParser extends BaseLogBinParser<String>{
 
-    final Cache<String, Map<String, TypeConverter>> TABLE_TYPE_CONVERTER_CACHE = Caffeine.newBuilder()
+    private final Cache<String, Map<String, TypeConverter>> TABLE_TYPE_CONVERTER_CACHE = Caffeine.newBuilder()
             .expireAfterWrite(24 * 60 * 60L, TimeUnit.SECONDS)
             .initialCapacity(100)
             .maximumSize(2000)
@@ -38,7 +35,6 @@ public class DefaultCanalStyleLogBinParser extends BaseLogBinParser<String>{
             .weakKeys()
             .build();
 
-    @Autowired
     public DefaultCanalStyleLogBinParser(LogOperateStrategyManager logOperateStrategyManager) {
         super(logOperateStrategyManager);
     }
@@ -50,7 +46,7 @@ public class DefaultCanalStyleLogBinParser extends BaseLogBinParser<String>{
         String tableName = (String) jsonSrc.get(TABLE_KEY);
         String databaseName = (String) jsonSrc.get(DATABASE_KEY);
         String completeCacheKey = String.format("%s.%s", databaseName, tableName);
-        // ddl的sql不做处理
+        // ddl的sql
         if (isDdl) {
             // 说明表格式有改动,清除缓存
             removeTypeConverterCacheIfNecessary(completeCacheKey);
