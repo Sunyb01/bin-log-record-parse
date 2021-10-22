@@ -56,21 +56,21 @@ public abstract class BaseLogBinParser<T> implements LogBinParser<T, BinRecordDe
     protected abstract List<BinRecordDetails<String, Object>> doParseSource(T source);
 
     /**
+     *  是否需要转化数据
+     * @param clazz 目标类型
+     * @return 需要返回true，否则返回true
+     */
+    protected Boolean isNeedTransformedData(Class<? extends BinRecordDetails<String, Object>> clazz) {
+        return Objects.nonNull(clazz);
+    }
+
+    /**
      *  参数校验
      * @param source 源
      * @return -
      */
     private Boolean verifySourceIsLegal(T source) {
         return Objects.nonNull(source);
-    }
-
-    /**
-     *  是否需要转化数据
-     * @param clazz 目标类型
-     * @return 需要返回true，否则返回true
-     */
-    private Boolean isNeedTransformedData(Class<? extends BinRecordDetails<String, Object>> clazz) {
-        return Objects.nonNull(clazz);
     }
 
     /**
