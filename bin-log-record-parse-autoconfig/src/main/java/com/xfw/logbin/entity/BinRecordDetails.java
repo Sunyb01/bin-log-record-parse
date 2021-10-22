@@ -11,7 +11,6 @@ import java.util.List;
  * @author yb.Sun
  * @date 2021/09/27 17:26
  **/
-@Getter
 @Setter
 @Builder
 @NoArgsConstructor
@@ -50,7 +49,7 @@ public class BinRecordDetails<K, V> extends HashMap<K, V> implements BinLogRecor
     }
 
     @Override
-    public String geOperateType() {
+    public String getOperateType() {
         return this.operateType;
     }
 
