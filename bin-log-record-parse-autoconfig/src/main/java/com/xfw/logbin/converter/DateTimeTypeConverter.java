@@ -25,7 +25,7 @@ public class DateTimeTypeConverter  implements TypeConverter {
 
     @Override
     public Date converter(String src) {
-        LocalDateTime ldt = LocalDateTime.parse("2017-09-28 17:07:05",df);
+        LocalDateTime ldt = LocalDateTime.parse(src, df);
         ZonedDateTime zdt = ldt.atZone(zoneId);
         return Date.from(zdt.toInstant());
     }
