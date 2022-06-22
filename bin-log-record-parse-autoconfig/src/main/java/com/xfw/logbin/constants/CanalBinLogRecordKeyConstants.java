@@ -93,6 +93,16 @@ public class CanalBinLogRecordKeyConstants {
      */
     public static final String MYSQL_TYPE_TIMESTAMP = "timestamp";
 
+    /**
+     *  mysql字段类型 - decimal
+     */
+    public static final String MYSQL_DECIMAL = "decimal";
+
+    /**
+     *  mysql字段类型 - bit
+     */
+    public static final String MYSQL_BIT = "bit";
+
     // ######################################################## 定位标识 ########################################################
 
     /**

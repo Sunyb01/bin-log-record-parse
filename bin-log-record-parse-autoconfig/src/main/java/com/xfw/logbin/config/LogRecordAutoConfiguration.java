@@ -92,5 +92,15 @@ public class LogRecordAutoConfiguration {
         public TypeConverter intTypeConverter() {
             return new IntTypeConverter();
         }
+
+        @Bean
+        public TypeConverter decimalTypeConverter() {
+            return new DecimalConverter();
+        }
+
+        @Bean
+        public TypeConverter bitTypeConverter() {
+            return new BitTypeConverter();
+        }
     }
 }

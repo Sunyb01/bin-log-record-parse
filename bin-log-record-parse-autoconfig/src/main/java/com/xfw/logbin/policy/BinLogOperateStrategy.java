@@ -68,7 +68,8 @@ public interface BinLogOperateStrategy {
         key = converter2LowCamelIfNecessary(key);
 
         if (StringUtils.isBlank(value)) {
-            throw new NullPointerException("Missing required param, it's null or empty!");
+            record.put(key, null);
+            return;
         }
 
         Object realValue = typeConverter.converter(value);

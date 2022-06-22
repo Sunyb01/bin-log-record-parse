@@ -6,9 +6,11 @@ com/xfw/logbin/process/DefaultCanalStyleLogBinParser$2.class
 com/xfw/logbin/converter/VarcharTypeConverter.class
 com/xfw/logbin/converter/TypeConverter.class
 com/xfw/logbin/process/BinLogParseStatus.class
+com/xfw/logbin/converter/DecimalConverter.class
 com/xfw/logbin/converter/TimeStampTypeConverter.class
 com/xfw/logbin/policy/LogOperateStrategyManager.class
 com/xfw/logbin/process/BinLogParseStatus$BinLogParseStatusBuilder.class
+com/xfw/logbin/converter/BitTypeConverter.class
 com/xfw/logbin/constants/CanalBinLogRecordKeyConstants.class
 com/xfw/logbin/policy/BinLogOperateStrategy.class
 com/xfw/logbin/config/LogRecordAutoConfiguration$TypeConverterAutoConfiguration.class
@@ -17,6 +19,7 @@ com/xfw/logbin/entity/BinLogRecord.class
 com/xfw/logbin/process/DefaultCanalStyleLogBinParser$3.class
 META-INF/spring-configuration-metadata.json
 com/xfw/logbin/config/LogRecordProperties.class
+com/xfw/logbin/converter/BigintTypeConverter.class
 com/xfw/logbin/policy/BinLogUpdateOperateStrategy.class
 com/xfw/logbin/policy/BinLogInsertOperateStrategy.class
 com/xfw/logbin/converter/IntTypeConverter.class
