@@ -102,5 +102,11 @@ public class LogRecordAutoConfiguration {
         public TypeConverter bitTypeConverter() {
             return new BitTypeConverter();
         }
+
+        @Bean
+        public TypeConverter jsonTypeConverter() {return new JsonTypeConverter();}
+
+        @Bean
+        public TypeConverter longtextTypeConverter() {return new LongtextTypeConverter();}
     }
 }

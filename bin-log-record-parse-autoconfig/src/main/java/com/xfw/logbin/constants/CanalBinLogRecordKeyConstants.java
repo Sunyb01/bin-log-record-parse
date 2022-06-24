@@ -6,6 +6,7 @@ package com.xfw.logbin.constants;
  * @date 2021/09/27 16:51
  **/
 public class CanalBinLogRecordKeyConstants {
+
     private CanalBinLogRecordKeyConstants() { }
 
     /**
@@ -102,6 +103,16 @@ public class CanalBinLogRecordKeyConstants {
      *  mysql字段类型 - bit
      */
     public static final String MYSQL_BIT = "bit";
+
+    /**
+     *  mysql字段类型 - json
+     */
+    public static final String MYSQL_TYPE_JSON = "json";
+
+    /**
+     *  mysql字段类型 - longtext
+     */
+    public static final String MYSQL_TYPE_LONG_TEXT = "longtext";
 
     // ######################################################## 定位标识 ########################################################
 

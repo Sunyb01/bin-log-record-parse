@@ -2,6 +2,7 @@
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/xfw/logbin/policy/LogOperateStrategyManager.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/xfw/logbin/process/DefaultCanalStyleLogBinParser.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/xfw/logbin/config/LogRecordAutoConfiguration.java
+/Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/xfw/logbin/converter/JsonTypeConverter.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/xfw/logbin/process/BinLogParseStatus.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/xfw/logbin/converter/BigintTypeConverter.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/xfw/logbin/entity/BinLogRecord.java
@@ -19,6 +20,7 @@
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/xfw/logbin/process/LogRecordContext.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/xfw/logbin/constants/CanalBinLogRecordKeyConstants.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/xfw/logbin/converter/IntTypeConverter.java
+/Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/xfw/logbin/converter/LongtextTypeConverter.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/xfw/logbin/converter/DecimalConverter.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/xfw/logbin/converter/BitTypeConverter.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/xfw/logbin/entity/BinRecordDetails.java

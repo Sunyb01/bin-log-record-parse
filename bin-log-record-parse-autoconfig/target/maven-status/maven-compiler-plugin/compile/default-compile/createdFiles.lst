@@ -5,11 +5,13 @@ com/xfw/logbin/process/BaseLogBinParser.class
 com/xfw/logbin/process/DefaultCanalStyleLogBinParser$2.class
 com/xfw/logbin/converter/VarcharTypeConverter.class
 com/xfw/logbin/converter/TypeConverter.class
+com/xfw/logbin/converter/JsonTypeConverter.class
 com/xfw/logbin/process/BinLogParseStatus.class
 com/xfw/logbin/converter/DecimalConverter.class
 com/xfw/logbin/converter/TimeStampTypeConverter.class
 com/xfw/logbin/policy/LogOperateStrategyManager.class
 com/xfw/logbin/process/BinLogParseStatus$BinLogParseStatusBuilder.class
+com/xfw/logbin/converter/LongtextTypeConverter.class
 com/xfw/logbin/converter/BitTypeConverter.class
 com/xfw/logbin/constants/CanalBinLogRecordKeyConstants.class
 com/xfw/logbin/policy/BinLogOperateStrategy.class
