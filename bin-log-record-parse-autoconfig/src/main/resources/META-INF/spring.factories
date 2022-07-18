@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.xfw.logbin.config.LogRecordAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.sunyb.logbin.config.LogRecordAutoConfiguration

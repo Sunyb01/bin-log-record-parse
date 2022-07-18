@@ -9,18 +9,36 @@
         <version>2.3.1.RELEASE</version>
     </parent>
 
-    <groupId>com.xfw.logbin</groupId>
+    <groupId>com.sunyb.logbin</groupId>
     <artifactId>bin-log-record-parse</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
-    <modules>
-        <module>bin-log-record-parse-autoconfig</module>
-        <module>bin-log-record-parse-starter</module>
-    </modules>
-
     <name>bin-log-record-parse</name>
-    <url>http://www.xfw.com</url>
+    <description>mysql bin log parsing tool</description>
+    <inceptionYear>2022</inceptionYear>
+    <url>https://github.com/Sunyb01/bin-log-record-parse</url>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>sunyb.com</id>
+            <name>The Project Contributors</name>
+            <email>18911031529@189.cn</email>
+            <url>https://www.sunyb.com/</url>
+        </developer>
+    </developers>
+
+    <organization>
+        <name>sunyb</name>
+        <url>https://www.sunyb.com/</url>
+    </organization>
 
     <properties>
         <java.version>1.8</java.version>
@@ -36,11 +54,16 @@
         <caffeine.version>2.8.8</caffeine.version>
     </properties>
 
+    <modules>
+        <module>bin-log-record-parse-autoconfig</module>
+        <module>bin-log-record-parse-starter</module>
+    </modules>
+
     <dependencyManagement>
         <dependencies>
 
             <dependency>
-                <groupId>com.xfw</groupId>
+                <groupId>com.sunyb.logbin</groupId>
                 <artifactId>bin-log-record-parse-autoconfig</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
@@ -135,32 +158,24 @@
 
     <repositories>
         <repository>
-            <id>nexus</id>
-            <name>nexus</name>
-            <url>http://47.99.39.180:8781/repository/maven-public/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </releases>
+            <id>aliyun</id>
+            <name>aliyun</name>
+            <url>https://maven.aliyun.com/repository/public</url>
         </repository>
     </repositories>
 
-    <!--上传jar包至 maven-public 仓库-->
-    <distributionManagement>
-        <repository>
-            <id>nexus</id>
-            <name>nexus</name>
-            <url>http://47.99.39.180:8781/repository/maven-public/</url>
-        </repository>
-        <snapshotRepository>
-            <id>nexus-snapshots</id>
-            <name>nexus-snapshots</name>
-            <url>http://47.99.39.180:8781/repository/maven-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>aliyun</id>
+            <name>aliyun</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <profiles>
+        <profile>
+            <id>snapshot</id>
+        </profile>
+    </profiles>
 
 </project>

@@ -8,5 +8,3 @@
 ![img.png](img.png)
 
 ### 3. 常见问题
-#### 1. 导入后SpringBoot无法加载的问题
-###### 当前包目录层级较高，如若加载不到请修改启动的的@SpringApplication(scanBasePackages = {your.package, "com.xfw.logbin"})

@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.xfw.logbin</groupId>
+    <groupId>com.sunyb.logbin</groupId>
     <artifactId>bin-log-record-parse</artifactId>
     <version>1.0-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
@@ -17,26 +17,29 @@
 
   <name>bin-log-record-parse-autoconfig</name>
   <description>bin loc record parse</description>
-  <inceptionYear>2021</inceptionYear>
-
+  <inceptionYear>2022</inceptionYear>
+  <url>https://github.com/Sunyb01/bin-log-record-parse</url>
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
       <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
     </license>
   </licenses>
 
-  <organization>
-    <name>xfw</name>
-    <url>https://www.xfw.com</url>
-  </organization>
-
   <developers>
     <developer>
-      <name>Sun_yu_bin</name>
+      <id>sunyb.com</id>
+      <name>The Project Contributors</name>
       <email>18911031529@189.cn</email>
+      <url>https://www.sunyb.com/</url>
     </developer>
   </developers>
+
+  <organization>
+    <name>sunyb</name>
+    <url>https://www.sunyb.com/</url>
+  </organization>
 
   <properties>
     <java.version>1.8</java.version>
