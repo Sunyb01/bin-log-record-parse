@@ -114,6 +114,11 @@ public class CanalBinLogRecordKeyConstants {
      */
     public static final String MYSQL_TYPE_LONG_TEXT = "longtext";
 
+    /**
+     *  mysql字段类型 - MYSQL_TYPE_BLOB
+     */
+    public static final String MYSQL_TYPE_BLOB = "blob";
+
     // ######################################################## 定位标识 ########################################################
 
     /**

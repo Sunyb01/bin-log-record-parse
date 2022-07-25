@@ -23,6 +23,7 @@
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/sunyb/logbin/converter/TypeConverter.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/sunyb/logbin/converter/TinyIntTypeConverter.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/sunyb/logbin/config/LogRecordProperties.java
+/Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/sunyb/logbin/converter/BlobTypeConverter.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/sunyb/logbin/converter/VarcharTypeConverter.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/sunyb/logbin/enums/BinLogOperateTypeEnum.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/sunyb/logbin/process/LogBinParser.java

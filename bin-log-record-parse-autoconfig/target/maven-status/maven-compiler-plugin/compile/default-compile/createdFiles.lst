@@ -19,6 +19,7 @@ com/sunyb/logbin/converter/CharTypeConverter.class
 com/sunyb/logbin/process/DefaultCanalStyleLogBinParser.class
 com/sunyb/logbin/converter/TypeConverter.class
 com/sunyb/logbin/constants/CanalBinLogRecordKeyConstants.class
+com/sunyb/logbin/converter/BlobTypeConverter.class
 META-INF/spring-configuration-metadata.json
 com/sunyb/logbin/policy/BinLogOperateStrategy.class
 com/sunyb/logbin/converter/VarcharTypeConverter.class

@@ -108,5 +108,10 @@ public class LogRecordAutoConfiguration {
 
         @Bean
         public TypeConverter longtextTypeConverter() {return new LongtextTypeConverter();}
+
+        @Bean
+        public TypeConverter blobTypeConverter() {
+            return new BlobTypeConverter();
+        }
     }
 }
