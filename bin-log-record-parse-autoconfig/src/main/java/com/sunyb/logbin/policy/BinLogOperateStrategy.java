@@ -11,6 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  *
@@ -96,12 +97,22 @@ public interface BinLogOperateStrategy {
      * @return com.sunyb.logbin.entity.BinRecordDetails<java.lang.String, java.lang.Object> 记录
      */
     default BinRecordDetails<String, Object> buildRecordByContext(LogRecordContext context) {
-        return BinRecordDetails.<String, Object>builder()
+        BinRecordDetails<String, Object> result = BinRecordDetails.<String, Object>builder()
                 .databaseName(context.getDatabaseName())
                 .operateType(context.getActionType())
                 .tableName(context.getTableName())
-                .olds(context.getOlds())
                 .pk(context.getPks())
                 .build();
+
+        List<Map<String, Object>> olds = context.getOlds();
+        if (CollectionUtils.isNotEmpty(olds)) {
+            olds = olds.stream()
+                    .map(item -> item.entrySet()
+                            .stream()
+                            .collect(Collectors.toMap(entry -> converter2LowCamelIfNecessary(entry.getKey()), Map.Entry::getValue, (n, o) -> n)))
+                    .collect(Collectors.toList());
+            result.setOlds(olds);
+        }
+        return result;
     }
 }
