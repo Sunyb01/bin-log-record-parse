@@ -43,4 +43,9 @@ public class LogRecordContext {
      *  olds
      */
     private List<Map<String, Object>> olds;
+
+    /**
+     *  记录数据
+     */
+    private List<Map<String, String>> recordData;
 }

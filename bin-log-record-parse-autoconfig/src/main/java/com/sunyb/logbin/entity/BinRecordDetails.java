@@ -40,6 +40,11 @@ public class BinRecordDetails<K, V> extends HashMap<K, V> implements BinLogRecor
     private List<Map<String, Object>> olds;
 
     /**
+     *  记录数据
+     */
+    private List<Map<String, String>> recordData;
+
+    /**
      *  主键列表
      */
     private List<String> pk;
@@ -68,6 +73,10 @@ public class BinRecordDetails<K, V> extends HashMap<K, V> implements BinLogRecor
         return olds;
     }
 
+    public List<Map<String, String>> getRecordData() {
+        return recordData;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -76,6 +85,7 @@ public class BinRecordDetails<K, V> extends HashMap<K, V> implements BinLogRecor
         sb.append(", operateType=").append(this.getOperateType());
         sb.append(", pk=").append(this.getPk());
         sb.append(", olds=").append(this.getOlds());
+        sb.append(", recordData=").append(this.getRecordData());
         Iterator<Entry<K,V>> i = entrySet().iterator();
         if (! i.hasNext()) {
             sb.append(")");
