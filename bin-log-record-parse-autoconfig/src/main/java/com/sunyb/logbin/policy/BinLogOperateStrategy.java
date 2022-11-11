@@ -100,6 +100,7 @@ public interface BinLogOperateStrategy {
         BinRecordDetails<String, Object> result = BinRecordDetails.<String, Object>builder()
                 .databaseName(context.getDatabaseName())
                 .operateType(context.getActionType())
+                .recordData(context.getRecordData())
                 .tableName(context.getTableName())
                 .pk(context.getPks())
                 .build();
