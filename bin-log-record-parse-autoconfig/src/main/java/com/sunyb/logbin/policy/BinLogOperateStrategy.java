@@ -100,6 +100,7 @@ public interface BinLogOperateStrategy {
                 .databaseName(context.getDatabaseName())
                 .operateType(context.getActionType())
                 .tableName(context.getTableName())
+                .olds(context.getOlds())
                 .pk(context.getPks())
                 .build();
     }

@@ -5,6 +5,7 @@ import lombok.*;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -32,6 +33,11 @@ public class BinRecordDetails<K, V> extends HashMap<K, V> implements BinLogRecor
      *  操作类型
      */
     private String operateType;
+
+    /**
+     *  旧数据
+     */
+    private List<Map<String, Object>> olds;
 
     /**
      *  主键列表
