@@ -30,6 +30,7 @@ com/sunyb/logbin/process/LogRecordContext.class
 com/sunyb/logbin/converter/TinyIntTypeConverter.class
 com/sunyb/logbin/config/LogRecordAutoConfiguration$LogOperateAutoConfiguration.class
 com/sunyb/logbin/entity/BinLogRecord.class
+com/sunyb/logbin/converter/DoubleTypeConverter.class
 com/sunyb/logbin/policy/BinLogDeleteOperateStrategy.class
 com/sunyb/logbin/converter/LongtextTypeConverter.class
 com/sunyb/logbin/process/LogBinParser.class

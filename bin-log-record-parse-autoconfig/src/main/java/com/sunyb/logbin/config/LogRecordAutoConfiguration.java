@@ -113,5 +113,10 @@ public class LogRecordAutoConfiguration {
         public TypeConverter blobTypeConverter() {
             return new BlobTypeConverter();
         }
+
+        @Bean
+        public TypeConverter doubleTypeConverter() {
+            return new DoubleTypeConverter();
+        }
     }
 }

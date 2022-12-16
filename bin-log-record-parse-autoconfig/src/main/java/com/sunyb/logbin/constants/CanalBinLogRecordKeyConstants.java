@@ -119,6 +119,12 @@ public class CanalBinLogRecordKeyConstants {
      */
     public static final String MYSQL_TYPE_BLOB = "blob";
 
+    /**
+     *  mysql字段类型 - datetime
+     */
+
+    public static final String MYSQL_TYPE_DOUBLE= "double";
+
     // ######################################################## 定位标识 ########################################################
 
     /**

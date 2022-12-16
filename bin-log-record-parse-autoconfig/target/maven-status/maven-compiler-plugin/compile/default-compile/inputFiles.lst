@@ -12,6 +12,7 @@
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/sunyb/logbin/converter/CharTypeConverter.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/sunyb/logbin/converter/TimeStampTypeConverter.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/sunyb/logbin/process/DefaultCanalStyleLogBinParser.java
+/Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/sunyb/logbin/converter/DoubleTypeConverter.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/sunyb/logbin/converter/DateTimeTypeConverter.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/sunyb/logbin/converter/LongtextTypeConverter.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/sunyb/logbin/constants/CanalBinLogRecordKeyConstants.java
