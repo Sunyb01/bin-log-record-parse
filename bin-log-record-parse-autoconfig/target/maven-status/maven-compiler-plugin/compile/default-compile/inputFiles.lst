@@ -1,5 +1,7 @@
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/sunyb/logbin/converter/JsonTypeConverter.java
+/Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/sunyb/logbin/converter/LongBlobTypeConverter.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/sunyb/logbin/config/LogRecordAutoConfiguration.java
+/Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/sunyb/logbin/converter/TextTypeConverter.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/sunyb/logbin/converter/TypeConverterManager.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/sunyb/logbin/entity/BinLogRecord.java
 /Users/pro/project/bin-log-record-parse/bin-log-record-parse-autoconfig/src/main/java/com/sunyb/logbin/process/BaseLogBinParser.java

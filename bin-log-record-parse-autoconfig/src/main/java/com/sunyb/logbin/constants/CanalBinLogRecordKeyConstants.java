@@ -115,9 +115,19 @@ public class CanalBinLogRecordKeyConstants {
     public static final String MYSQL_TYPE_LONG_TEXT = "longtext";
 
     /**
+     *  mysql字段类型 - text
+     */
+    public static final String MYSQL_TYPE_TEXT = "text";
+
+    /**
      *  mysql字段类型 - MYSQL_TYPE_BLOB
      */
     public static final String MYSQL_TYPE_BLOB = "blob";
+
+    /**
+     *  mysql字段类型 - MYSQL_TYPE_LONG_BLOB
+     */
+    public static final String MYSQL_TYPE_LONG_BLOB = "longblob";
 
     /**
      *  mysql字段类型 - datetime

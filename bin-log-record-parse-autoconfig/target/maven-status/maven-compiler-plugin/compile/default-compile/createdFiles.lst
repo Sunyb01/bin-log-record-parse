@@ -2,6 +2,7 @@ com/sunyb/logbin/converter/TimeStampTypeConverter.class
 com/sunyb/logbin/policy/BinLogInsertOperateStrategy.class
 com/sunyb/logbin/converter/BigintTypeConverter.class
 com/sunyb/logbin/converter/IntTypeConverter.class
+com/sunyb/logbin/converter/TextTypeConverter.class
 com/sunyb/logbin/config/LogRecordProperties.class
 com/sunyb/logbin/policy/BinLogUpdateOperateStrategy.class
 com/sunyb/logbin/process/DefaultCanalStyleLogBinParser$3.class
@@ -23,6 +24,7 @@ com/sunyb/logbin/converter/BlobTypeConverter.class
 META-INF/spring-configuration-metadata.json
 com/sunyb/logbin/policy/BinLogOperateStrategy.class
 com/sunyb/logbin/converter/VarcharTypeConverter.class
+com/sunyb/logbin/converter/LongBlobTypeConverter.class
 com/sunyb/logbin/policy/LogOperateStrategyManager.class
 com/sunyb/logbin/config/LogRecordAutoConfiguration$TypeConverterAutoConfiguration.class
 com/sunyb/logbin/converter/TypeConverterManager.class
