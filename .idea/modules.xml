@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/bin-log-record-parse.iml" filepath="$PROJECT_DIR$/.idea/bin-log-record-parse.iml" />
       <module fileurl="file://$PROJECT_DIR$/bin-log-record-parse-autoconfig/bin-log-record-parse-autoconfig.iml" filepath="$PROJECT_DIR$/bin-log-record-parse-autoconfig/bin-log-record-parse-autoconfig.iml" />
       <module fileurl="file://$PROJECT_DIR$/bin-log-record-parse-starter/bin-log-record-parse-starter.iml" filepath="$PROJECT_DIR$/bin-log-record-parse-starter/bin-log-record-parse-starter.iml" />
     </modules>
